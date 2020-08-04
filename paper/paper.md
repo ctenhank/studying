@@ -75,8 +75,8 @@
 
 **논문 읽는법**
 
-* [논문을-효율적으로-읽는-방법](https://woongheelee.com/entry/%EB%85%BC%EB%AC%B8%EC%9D%84-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EB%B0%A9%EB%B2%95](https://woongheelee.com/entry/논문을-효율적으로-읽는-방법))
-* [페이퍼를-빨리-효율적으로-읽는-방법을-알려주마]([https://madscientist.wordpress.com/2016/04/26/%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%A5%BC-%EB%B9%A8%EB%A6%AC-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%95%8C%EB%A0%A4%EC%A3%BC%EB%A7%88/](https://madscientist.wordpress.com/2016/04/26/페이퍼를-빨리-효율적으로-읽는-방법을-알려주마/))
+* [논문을-효율적으로-읽는-방법](https://woongheelee.com/entry/%EB%85%BC%EB%AC%B8%EC%9D%84-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EB%B0%A9%EB%B2%95)
+* [페이퍼를-빨리-효율적으로-읽는-방법을-알려주마](https://madscientist.wordpress.com/2016/04/26/%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%A5%BC-%EB%B9%A8%EB%A6%AC-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%95%8C%EB%A0%A4%EC%A3%BC%EB%A7%88/)
 * [영어 못해도 논문 잘 읽는 법](http://gradschoolstory.net/terry/readingpapers/)
 
 
