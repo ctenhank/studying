@@ -1,0 +1,140 @@
+ ObsPy
+Search Docs
+ GitHub
+ Documentation 
+ Mailing Lists 
+ Developer Resources 
+index| modules| next| previous
+ObsPy Documentation (1.2.0)
+ObsPy Library Reference
+ObsPy’s functionality is provided through the following packages.
+
+General Packages
+
+This section lists the core package that ties everything together as well as other general packages and packages that don’t fit it any of the other categories.
+
+obspy.core	obspy.core - Core classes of ObsPy
+obspy.db	obspy.db - A seismic waveform indexer and database for ObsPy
+obspy.geodetics	obspy.geodetics - Various geodetic utilities for ObsPy
+obspy.imaging	obspy.imaging - Plotting routines for ObsPy
+obspy.realtime	obspy.realtime - Real time support for ObsPy
+obspy.signal	obspy.signal - Signal processing routines for ObsPy
+obspy.taup	obspy.taup - Ray theoretical travel times and paths
+Scripts
+
+All command-line scripts shipping with ObsPy.
+
+obspy.scripts.flinnengdahl	Get the Flinn-Engdahl region name from longitude and latitude.
+obspy.scripts.runtests	A command-line program that runs all ObsPy tests.
+obspy.scripts.reftekrescue	Restore REFTEK data from raw binary data dumps.
+obspy.scripts.print	Print stream information for waveform data in local files.
+obspy.scripts.sds_html_report	Build a quality control HTML page.
+obspy.db.scripts.indexer	A command-line program that indexes seismogram files into a database.
+obspy.imaging.scripts.scan	Scan a directory to determine the data availability.
+obspy.imaging.scripts.plot	Simple script to plot waveforms in one or more files.
+obspy.imaging.scripts.mopad	MoPaD command line utility.
+obspy.io.mseed.scripts.recordanalyzer	A command-line tool to analyze Mini-SEED records.
+obspy.io.xseed.scripts.dataless2xseed	A command-line program that converts Dataless SEED into XML-SEED files.
+obspy.io.xseed.scripts.xseed2dataless	A command-line program that converts XML-SEED into Dataless SEED files.
+obspy.io.xseed.scripts.dataless2resp	A command-line program that converts Dataless SEED into RESP files.
+Database or Web Service Access Clients
+
+All ObsPy clients enabling remote and local access to data.
+
+obspy.clients.arclink	obspy.clients.arclink - ArcLink/WebDC request client for ObsPy
+obspy.clients.earthworm	obspy.clients.earthworm - Earthworm Wave Server client for ObsPy.
+obspy.clients.fdsn	obspy.clients.fdsn - FDSN web service client for ObsPy
+obspy.clients.filesystem	obspy.clients.filesystem - Local filesystem (SDS or TSINDEX) client for ObsPy
+obspy.clients.iris	obspy.clients.iris - IRIS web service client for ObsPy
+obspy.clients.neic	obspy.clients.neic - CWB query module for ObsPy
+obspy.clients.nrl	obspy.clients.nrl - Nominal Response Library client for ObsPy
+obspy.clients.seedlink	obspy.clients.seedlink - SeedLink client for ObsPy
+obspy.clients.seishub	obspy.clients.seishub - SeisHub database client for ObsPy
+obspy.clients.syngine	obspy.clients.syngine - IRIS Syngine client for ObsPy
+Waveform Import/Export Plug-ins
+
+Warning
+
+In most cases these modules do not need to be called directly. They register via the central ObsPy read() function - call this instead.
+
+Usage Example:
+
+import obspy
+# Format will be detected automatically.
+st = obspy.read("/path/to/file")
+# Many formats can also be written out - just use the module name.
+st.write("/path/to/outfile", format="mseed")
+obspy.io.ah	obspy.io.ah - AH (Ad Hoc) read support for ObsPy
+obspy.io.ascii	obspy.io.ascii - SLIST and TSPAIR support for ObsPy
+obspy.io.css	obspy.io.css - CSS read support for ObsPy
+obspy.io.dmx	obspy.io.dmc - INGV DMX file format reader for ObsPy
+obspy.io.gcf	obspy.io.gcf - Guralp Compressed Format read support for ObsPy
+obspy.io.gse2	obspy.io.gse2 - GSE2/GSE1 and GSE2 bulletin support for ObsPy
+obspy.io.kinemetrics	obspy.io.kinemetrics - Evt format support for ObsPy
+obspy.io.mseed	obspy.io.mseed - MiniSEED read and write support for ObsPy
+obspy.io.nied.knet	obspy.io.nied.knet - K-NET/KiK-net read support for ObsPy
+obspy.io.pdas	obspy.io.pdas - PDAS file read support for ObsPy
+obspy.io.reftek	obspy.io.reftek - REFTEK130 read support for ObsPy
+obspy.io.rg16	obspy.io.rg16 - Receiver Gather v1.6 read support for ObsPy
+obspy.io.sac	obspy.io.sac - SAC read and write support for ObsPy
+obspy.io.seisan	obspy.io.seisan - SEISAN read support for ObsPy
+obspy.io.seg2	obspy.io.seg2 - SEG-2 read support for ObsPy
+obspy.io.segy	obspy.io.segy - SEG Y and SU read and write support for ObsPy
+obspy.io.sh	obspy.io.sh - Q and ASC read and write, EVT read support (Seismic Handler)
+obspy.io.wav	obspy.io.wav - WAV (audio) read and write support for ObsPy
+obspy.io.win	obspy.io.win - WIN read support for ObsPy
+obspy.io.y	obspy.io.y - Nanometrics Y file read support for ObsPy
+Event Data Import/Export Plug-ins
+
+Warning
+
+In most cases these modules do not need to be called directly. They register via the central ObsPy read_events() function - call this instead.
+
+Usage Example:
+
+import obspy
+# Format will be detected automatically.
+cat = obspy.read_events("/path/to/file")
+# Many formats can also be written out - just use the module name.
+cat.write("/path/to/outfile", format="quakeml")
+obspy.io.cmtsolution	obspy.io.cmtsolution - CMTSOLUTION file format support for ObsPy
+obspy.io.cnv	obspy.io.cnv - CNV file format support for ObsPy
+obspy.io.focmec	obspy.io.focmec - FOCMEC file format support for ObsPy
+obspy.io.gse2	obspy.io.gse2 - GSE2/GSE1 and GSE2 bulletin support for ObsPy
+obspy.io.hypodd	obspy.io.hypodd - HypoDD read support for ObsPy
+obspy.io.iaspei	obspy.io.iaspei - Read support for IASPEI formats
+obspy.io.json	obspy.io.json - JSON write support for ObsPy
+obspy.io.kml	obspy.io.kml - Keyhole Markup Language (KML) write support for ObsPy
+obspy.io.ndk	obspy.io.ndk - NDK file support for ObsPy
+obspy.io.nied.fnetmt	obspy.io.nied.fnet - F-net moment tensor file read support for ObsPy
+obspy.io.nlloc	obspy.io.nlloc - NonLinLoc file format support for ObsPy
+obspy.io.nordic	obspy.io.nordic - Nordic file format support for ObsPy
+obspy.io.pde	obspy.io.pde - NEIC PDE Bulletin read support for ObsPy
+obspy.io.quakeml	obspy.io.quakeml - QuakeML read and write support for ObsPy
+obspy.io.scardec	obspy.io.scardec - SCARDEC file format support for ObsPy
+obspy.io.seiscomp	obspy.io.seiscomp - SeisComP3 inventory and event file support for ObsPy
+obspy.io.shapefile	obspy.io.shapefile - ESRI shapefile write support for ObsPy
+obspy.io.zmap	obspy.io.zmap - ZMAP read and write support for ObsPy
+Inventory Data Import/Export Plug-ins
+
+Warning
+
+In most cases these modules do not need to be called directly. They register via the central ObsPy read_inventory() function - call this instead.
+
+Usage Example:
+
+import obspy
+# Format will be detected automatically.
+inv = obspy.read_inventory("/path/to/file")
+# Many formats can also be written out - just use the module name.
+inv.write("/path/to/outfile", format="stationxml")
+obspy.io.arclink	obspy.io.arclink - Arclink inventory files read support for ObsPy
+obspy.io.css	obspy.io.css - CSS read support for ObsPy
+obspy.io.kml	obspy.io.kml - Keyhole Markup Language (KML) write support for ObsPy
+obspy.io.sac.sacpz	obspy.io.sac.sacpz - SACPZ write support for ObsPy
+obspy.io.seiscomp	obspy.io.seiscomp - SeisComP3 inventory and event file support for ObsPy
+obspy.io.shapefile	obspy.io.shapefile - ESRI shapefile write support for ObsPy
+obspy.io.stationtxt	obspy.io.stationtxt - FDSNWS station text file read and write support for ObsPy
+obspy.io.stationxml	obspy.io.stationxml - StationXML read and write support for ObsPy
+obspy.io.xseed	obspy.io.xseed - (X)SEED and RESP support for ObsPy
+By the ObsPy Development Team and many Awesome Contributors™  |  Built with Bootstrap and Glyphicons  |  Copyright 2008-2020
