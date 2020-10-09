@@ -1,0 +1,12 @@
+- bare metal server
+- virtualization
+- cloud
+- cloud native application
+- openstack
+- datacenter
+- hypervisor
+- container
+- xen
+- vmware
+- kvm
+- kubernetes
