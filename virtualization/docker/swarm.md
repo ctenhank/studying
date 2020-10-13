@@ -869,21 +869,60 @@ qkfbou3rfxav        client.1            alicek106/book:curl   dohan             
 #### volume 타입
 
 - 서비스 생성시 옵션`--mount type=volume`을 통해 명시해야 함
-
-- 해당하는 이름의 볼륨이 없으면 새로 생성
-
+- 해당하는 이름의 [볼륨](docker_volume.md)이 없으면 새로 생성
 - 마운트할 볼륨을 따로 명시하지 않으면 임의의 16진수로 구성된 익명의 볼륨을 생성 
 
   - `docker service create --mout type=volume,source=myvol,target=/root`
   - `docker service create --mout type=volume,target=/root`: 임의의 16진수 익명 볼륨 생성
-
-  ```bash
-  
-  ```
-
-  
+- 호스트와 디렉토리를 공유할때는 `--mount type=bind`로 명시
+- 스웜 모드에서 볼륨 사용은 적합하지 않은 것이 서비스를 할당받을 모든 노드들은 이에 대한 로컬 데이터 볼륨을 가지고 있어야 함. 그렇지 않다면, 해당 노드에 컨테이너가 할당되지 않을 것인데, 이는 persistent storage를 이용하여 해결할 수 있ᅌᅳᆷ
 
 
 
+### 도커 스웜 모드 노드 다루기
 
+- 서비스를 좀 더 유연하게 할당하려면 새로우 ᄔᅩ드를 추가하는 것뿐만 아니라 노드를 다루기 위한 전략도 필요
+- 현재는 스웜 모드의 스케줄러를 사용자가 자체적으로 수정할 수 없음
+
+#### 노드 Availability 변경하기
+
+- 스웜 클러스터의 노드 상태는 세 가지가 존재
+  - Active
+  - Drain
+  - Pause
+- 일반적으로 매니저와 같은 마스터 노드는 최대한 부하를 받지 않도록 서비스를 할당받지 않게 하는 것이 좋음
+- 이를 위해 특정 노드의 Availability를 설정함으로써 컨테이너의 할당 가능 여부를 변경 가능
+
+##### Active 상태
+
+- 새로운 노드가 스웜 클러스터에 추가되면 기본적으로 설정되는 상태
+- 노드가 서비스의 컨테이너를 할당받을 수 있음을 의미
+- `docker node update --availability active NODE`를 통해 Active 상태로 변경 가능
+
+##### Drain 상태
+
+- 노드를 Drain 상태로 설정하면 스웜 매니저 스케줄러는 컨테이너를 해당 노드에 할당하지 않음
+- 주로 매니저 노드에 설정하는 상태지만, 노드에 문제가 생겨 일시적으로 사용하지 않는 상태로 설정할 때도 사용
+- `docker node update --availability drain NODE`를 통해 Drain 상태로 변경 가능
+- Drain 상태가 되면 기존에 실행하고 있는 컨테이너는 전부 중지되고 Active 상태의 노드에게 할당됨
+
+##### Pause 상태
+
+- Drain과 유사하지만, 실행 중인 컨테이너가 중지되지 않음
+- `docker node update --availability pause NODE`를 통해 Pause 상태로 변경 가능
+
+#### 노드 라벨 추가
+
+- 노드에 라벨을 추가하는 것은 노드 분류와 비슷함
+- 라벨은 key-value 형태를 가지고 있으며, 키 값으로 노드를 구별할 수 있음
+- `docker node update --label-add KEY=VALUE NODE`를 통해 노드 라벨 추가 가능
+
+##### 서비스 제약
+
+- 서비스 제약은 노드 label, ID, hostname, role 또는 engine label 등을 통해 제약할 수 있음
+
+-  `docker service create --constraint 'node.labels.LABEL(KEY=VALUE)'`
+- `docker service create --constraint 'node.{id, hostname, role}'`
+- 도커 데몬 자체에 라벨을 설정하려면 도커 데몬의 실행 옵션을 변경해야 함 
+  `DOCKER_OPTS="... --label=mylabel=worker2 --label mylabel2=second_worker ..."`
 
