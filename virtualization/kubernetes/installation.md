@@ -2,7 +2,7 @@
 
 ### Installation Sequence
 
-1. installation kubernetes
+1. installation kubernetes[[1]](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
    ```bash
    sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
@@ -70,4 +70,8 @@
       ```
 
 
+
+### Reference
+
+[1]: https://kubernetes.io/docs/tasks/tools/install-kubectl/	"install and set up kubectl "
 
