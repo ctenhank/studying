@@ -40,19 +40,25 @@ Server-->RemoteNode:return & print
 - [**Docker Daemon**](daemon.md)
   - 클라이언트에게서 API Request를 `listen`하며, 실질적으로 이미지, 컨테이너, 네트워크, 볼륨과 같은 오브젝트들을 관리
   - 다른 `docker daemon`들과 `service`를 관리하기 위해 통신하기도 함
+  
 - [**Docker Client**](client.md)
   - `docker daemon`, 즉 `server`에게 어떤 기능을 수행시키기 위해 API Request을 함
   - API Request는 `CLI` 또는 `RESTful API`를 이용해서 할 수 있음
   - 하나 이상의 `docker daemon`들과 통신할 수 있ᅌᅳᆷ
+  
 - [**Docker Registry**](registry.md)
   - `Docker Inc.`에서 사용자에게 `docker image`를 저장하는데 제공하는 Hub
   - `docker pull`, `docker push`를 통해서 `docker registry`와 이미지를 주고 받을 수 있음
+  
 - **Docker objects**
-  - [**Image**](image.md)
+  
+  - 도커 엔진에서 사용하는 **기본 단위는 image와 container**이며, 이는 **도커 엔진의 핵심**
+  
+  - [**Image**](image_container.md)
     - 도커 컨테이너를 생성하기 위한 `read-only` 템플릿
     - 어떤 이미지를 기반으로 컨테이너를 생성하고, 그 컨테이너를 변경하면 그 변동사항을 바탕으로 `build`하여 새로운 이미지를 생성
     - 또한 [`Dockerfile`](dockerfile.md)을 통해 이미지를 `build`할 수 있음
-  - [**Container**](container.md)
+  - [**Container**](image_container.md)
     - Docker API나 CLI를 통해 이미지를 통해 생성한 실행가능한 인스턴스
     - 컨테이너는 하나 이상의 네트워크, 스토리지에 연결할 수 있음
     - 컨테이너 상태를 기반으로 새로운 이미지를 만들 수 있음
