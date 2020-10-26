@@ -1,8 +1,8 @@
 # Control Flow
 
-### Condition Control
+## Condition Control
 
-#### `if` statement
+### `if` statement
 
 - Go에서는 `c/c++`과 동일하게 `if`, `if-else`, `if-else if-else`와 같이 이용할 수 있음
 
@@ -35,7 +35,7 @@
   val++
   ```
 
-#### `switch` statement
+### `switch` statement
 
 - `switch` 문은 복잡한 `if` 문 유형들을 단순화하는데 유용
 
@@ -87,7 +87,7 @@
   }
   ```
 
-####  조건식만 사용하는 for loop
+#### 조건식만 사용하는 for loop
 
 ```go
 package main
@@ -165,8 +165,4 @@ func main() {
   ```
 
   
-
-
-
-
 

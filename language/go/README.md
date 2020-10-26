@@ -26,25 +26,28 @@
 - [Variable and Constant](variable_constant.md)
 - [Data type](datatype.md)
 - [Operator](operator.md)
-- [Control Flow](control_flow.md)
+- [Control Flow](controlflow.md)
   - Condition
   - Loop
 - [Function](function.md)
   - Anonymous function
   - Closure
+  - `defer`
 - [Collections](collection.md)
   - Array
   - Slice
   - Map
-- Packages
+- [Packages](package.md)
 - [User-Defined Data Type](user-defined-datatype.md)
   - Struct
   - Method
   - Interface
-- Exception
-- defer and panic
-- gorountine
-- channel
+- [error](error.md)
+  - Exception
+  - `panic` and `recover`
+- [Concurrency](concurrency.md)
+  - Goroutine
+  - Channel
 
 ## References
 

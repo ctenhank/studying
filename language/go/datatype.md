@@ -30,7 +30,7 @@
   >
   > 따라서 만약 8비트 [문자열 인코딩](../../encoding.md)을 이용한다면 `byte` 문자열을 유니코드 문자열 인코딩을 이용한다면 `rune`타입을 이용하여 앞선 연산들을 수행할 수 있음
 
-#### String
+### String
 
 문자열 리터럴은 `""`(Double Quote) 또는 ``(Back Quote)로 표현가능
 
@@ -74,7 +74,7 @@
   Welcome to Go
   ```
 
-#### Type Conversion
+### Type Conversion
 
 - `Golang`에서는 타입 변환을 하기 위해서는 반드시 데이터 타입을 명시해줘야 함
 

@@ -1,13 +1,13 @@
 # Collection in Golang
 
-### Array
+## Array
 
-#### Features
+### Features
 
 - 배열은 **연속적인 메모리 공간**에 **동일한 타입의 데이터**를 **순차적을 저장**하는 자료구조
 - Go에서는 배열의 첫 번째 요소는 0번, 그 다음은 1번, 2번 등으로 인덱스를 매김
 
-#### Declaration
+### Declaration
 
 - 선언은 `var 변수명 [배열크기]자료형`과 같음
 
@@ -18,7 +18,7 @@ a[1] = 2
 a[2] = 3
 ```
 
-#### Isnitialization
+### Initialization
 
 - 배열 선언과 동시에 초기화를 하면 `{}` 브라켓 안에 초기값을 순서대로 적으면 됨
 
@@ -29,7 +29,7 @@ a[2] = 3
   var b [...]int{4,5}
   ```
 
-#### Mutli-Dimensional Array
+### Mutli-Dimensional Array
 
 - Go는 다차원 배열을 지원하는데 배열크기 부분을 복수 개로 설정하여 선언
 
@@ -42,13 +42,13 @@ a[2] = 3
 
 
 
-### Slice
+## Slice
 
 - Array는 고정된 배열크기 안에 동일한 타입의 데이터만 연속적으로 저장하지만, 배열의 크기를 동적으로 증가시키거나 부분 배열을 발췌하는 등의 기능은 없음
 - `slice`는 배열에 기초하여 만들어졌지만, 고정된 크기를 미리 지정하지 않고, 차후 그 크기를 동적으로 변경하거나 부분 발췌가 가능함
 - `slice`는 실제 배열을 가리키는 포인터 정보와 `length`, `capacity`만을 가짐
 
-#### Declaration
+### Declaration
 
 - Array와 동일한게 `var v []T` 형식으로 하되, 크기는 지정하지 않음
 
@@ -83,7 +83,7 @@ a[2] = 3
     }
     ```
 
-#### Sub-slice
+### Sub-slice
 
 - Go에서는 슬라이스 일부를 발췌하여 부분 슬라이스를 만들 수 있음
 
@@ -133,7 +133,7 @@ a[2] = 3
   - `capacity`가 없는 경우
     - 현재 `capacity`의 2배에 해당하는 새로운 배열에 값들을 복제하고 다시 `slice`에 할당
 
-#### Internal Structure of Slice
+### Internal Structure of Slice
 
 - 슬라이스는 내부적으로 사용하는 배열의 부분 영역인 세그먼트에 대한 메타데이터만 가지고 있음
 - 슬라이스는 크게 세 개의 필드로 구성되어 있음
@@ -143,13 +143,13 @@ a[2] = 3
 
 ![Image](http://golang.site/images/basics/go-slice-internal.png)
 
-### Map
+## Map
 
-#### Features
+### Features
 
 - Map은 `key`에 대응하는 `value`를 신속히 찾는 **Hash table**을 구현한 자료구조
 
-#### Declaration
+### Declaration
 
 - 선언은 `var 변수명 map[key타입]value타입`과 같음
 
@@ -177,7 +177,7 @@ a[2] = 3
     }
     ```
 
-#### Usage
+### Usage
 
 - `make()`함수를 통해 초기화 됐을 때는, 아무런 데이터가 없는 상태
 

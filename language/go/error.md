@@ -1,4 +1,6 @@
-# Exception in Golang
+# Errors
+
+## Exception in Golang
 
 ### Features
 
@@ -50,5 +52,62 @@
   }
   ```
 
-  
+## `panic` and `recover` Function
+
+### `panic()`
+
+- `panic()` 함수는 현재 함수를 즉시 멈추고 현재 함수의 `defer` 함수들을 모두 실행한 후 즉시 리턴
+- `panic` 모드 실행 방식은 다시 상위 함수에도 똑같이 적용되고, 계속해서 콜스택을 타고 올라가며 적용됨
+- 마지막에는 프로그램이 에러를 내고 종료하게 됨
+
+### `recover()`
+
+- `recover()` 함수는 `panic()` 상태를 다시 정상상태로 되돌리는 함수
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "os"
+)
+
+// first
+func main() {
+    // 잘못된 파일명을 넣음
+    openFile("Invalid.txt")
+     
+    // openFile() 안에서 panic이 실행되면
+    // 아래 println 문장은 실행 안됨
+    println("Done") 
+}
+ 
+// second
+func main() {
+    // 잘못된 파일명을 넣음
+    openFile("Invalid.txt")
+ 
+    // recover에 의해
+    // 이 문장 실행됨
+    println("Done") 
+}
+ 
+func openFile(fn string) {
+    // defer 함수. panic 호출시 실행됨
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("OPEN ERROR", r)
+        }
+    }()
+ 
+    f, err := os.Open(fn)
+    if err != nil {
+        panic(err)
+    }
+ 
+    defer f.Close()
+}
+```
+
+
 

@@ -1,6 +1,6 @@
 # Variable, Constant, Keyword in Golang
 
-### Variable
+## Variable
 
 - 변수는 키워드 `var`를 사용하여 선언하는데, `var` 키워드 뒤에 변수명을 적고, 그 뒤에 변수타입을 적음
 
@@ -47,7 +47,7 @@
   - `var`를 생략하고 선언할 수 있음
   - 이 표현은 `func`(함수) 내부에서만 사용할 수 있으며, 함수 밖에서는 `var`ᄅᆖᆯ 사용해야 함
 
-### Constant
+## Constant
 
 - 상수는 키워드 `const`를 사용하여 선언하는데, 선언 순서와 사용법은 [Variable](#Variable)과 동일
 
@@ -61,7 +61,7 @@
   )
   ```
 
-### Keyword
+## Keyword
 
 - Go언어는 총 25개의 reserved keywords를 가짐
 
