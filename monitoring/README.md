@@ -14,14 +14,9 @@ E --> C
 ### Development Sequence
 
 1. image pull
-2. conatiner 실행
+2. container 실행
 3. 모든 conatiner들 확인
 4. conatiner 정보들 get하기
-
-```mermaid
-sequenceDiagram
-participant 
-```
 
 
 
@@ -43,4 +38,8 @@ participant
    - [ ] 컨테이너 메트릭 받기
 3. 받은 정보들 데이터베이스 저장
 4. 받은 정보들 대쉬보드에 표현해주기
+
+### Todo
+
+- [TODO List](todo.md) 참고
 
