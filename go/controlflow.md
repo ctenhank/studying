@@ -110,7 +110,7 @@ func main() {
 package main
  
 func main() {
-    for {
+    for {ㅋ
         println("Infinite loop")        
     }
 }
